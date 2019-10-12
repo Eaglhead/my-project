@@ -143,9 +143,7 @@ export default {
             BgPic: 'home'
         }
     },
-    mounted() {
-        this.$router.push({path: '/'})
-    },
+
     methods: {
         ChangePage: function (value) {
             this.data_title.forEach( (item) => {
@@ -155,7 +153,7 @@ export default {
                 }
             });
             if(value == '首页'){
-                this.$router.push({path: '/'});
+                this.$router.push({path: '/TopNav'});
                 this.BgPic = 'home';
             }
             if(value == '污水厂'){

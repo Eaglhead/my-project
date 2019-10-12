@@ -1,22 +1,37 @@
 <template>
-  <div class="home">
-    <TopNav/>
-    <!-- <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <div>
+    <ul>
+      <li v-for="(item,index) in data_title" @click="ChangePage(item.name)" :key="index">{{item.name}}</li>
+    </ul>
     
   </div>
 </template>
 
 <script>
 // @ is an alias to /src
-// import HelloWorld from '@/components/HelloWorld.vue'
-import TopNav from '@/views/TopNav.vue'
 
 export default {
   name: 'home',
-  components: {
-    // HelloWorld,
-    TopNav
+  data(){
+    return {
+      data_title:[{
+        name:'时间组件'
+      },
+      {
+        name:'页面'
+      }]
+    }
+  },
+  methods:{
+    ChangePage: function (name) {
+      if (name === '时间组件') {
+        this.$router.push({path: '/TimeChoose'})
+      }
+      if (name === '页面') {
+        this.$router.push({path: '/TopNav'})
+      }
+      
+    }
   }
 }
 </script>

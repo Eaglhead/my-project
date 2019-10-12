@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
 Vue.use(Router)
 
@@ -8,8 +7,18 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home,
+      name: 'Home',
+      component: () => import(/* webpackChunkName: "about" */ './views/Home.vue'),
+    },
+    {
+      path: '/TimeChoose',
+      name: 'TimeChoose',
+      component: () => import(/* webpackChunkName: "about" */ './views/components/TimeChoose.vue'),
+    },
+    {
+      path: '/TopNav',
+      name: 'TopNav',
+      component: () => import(/* webpackChunkName: "about" */ './views/TopNav.vue'),
       children: [
         {
           path: '/',
@@ -20,7 +29,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "about" */ './views/PageBody/HomePage.vue')
         },
         {
-          path: 'WaterWorks',
+          path: '/WaterWorks',
           name: 'WaterWorks',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
@@ -28,7 +37,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "about" */ './views/PageBody/WaterWorks.vue')
         },
         {
-          path: 'Pump',
+          path: '/Pump',
           name: 'Pump',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
@@ -36,7 +45,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "about" */ './views/PageBody/Pump.vue')
         },
         {
-          path: 'Warn',
+          path: '/Warn',
           name: 'Warn',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
@@ -44,7 +53,7 @@ export default new Router({
           component: () => import(/* webpackChunkName: "about" */ './views/PageBody/Warn.vue')
         },
         {
-          path: 'Company',
+          path: '/Company',
           name: 'Company',
           // route level code-splitting
           // this generates a separate chunk (about.[hash].js) for this route
