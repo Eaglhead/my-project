@@ -141,7 +141,7 @@
     /*可视化echars*/
     .echarts {
       width: 550px;
-      height: 460px;
+      height: 435px;
       margin: auto;
       display: block;
       position: absolute;
@@ -218,7 +218,7 @@ export default {
             show_list1:false,
             show_list2:false,
             data_name:'111',//用于存储表格的列名，比如压力(kpa)，展示在历史曲线页面标题
-            station_name:'111',
+            station_name:'杨树浦',
             value_time1: '',
             value_time2: '',
             before_year: '',//用于记录前时间
@@ -244,6 +244,7 @@ export default {
     },
     mounted(){
         this.get_time();
+        this.getEcharts();
     },
     methods: {
         select_days: function(year,month){//判断当月的天数
@@ -467,7 +468,7 @@ export default {
                 }]
             });
 
-            myChart.showLoading();
+            // myChart.showLoading();
             // api.ajax({
             //     url: Api.get('history_data'),
             //     method: 'post',
