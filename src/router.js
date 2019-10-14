@@ -11,11 +11,6 @@ export default new Router({
       component: () => import(/* webpackChunkName: "about" */ './views/Home.vue'),
     },
     {
-      path: '/TimeChoose',
-      name: 'TimeChoose',
-      component: () => import(/* webpackChunkName: "about" */ './views/components/TimeChoose.vue'),
-    },
-    {
       path: '/TopNav',
       name: 'TopNav',
       component: () => import(/* webpackChunkName: "about" */ './views/TopNav.vue'),

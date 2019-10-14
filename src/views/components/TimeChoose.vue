@@ -2,7 +2,7 @@
     <div class="history">
         <div class="hengtiao">
           <span>{{data_name}}</span>
-          <div class="close" @click.stop="show_false">
+          <div class="close" @click.stop="$emit('close')">
             X
           </div>
         </div>
@@ -110,6 +110,7 @@
         width: 20px;
         height: 24px;
         border: 1px solid #dddddd;
+        cursor: pointer;
     }
     .img_xia:before{
         content:"";
@@ -173,6 +174,7 @@
         position: absolute;
         right: 10px;
         top: 10px;
+        cursor: pointer;
     }
 
     /*查询按钮*/
@@ -183,6 +185,7 @@
         top: 35px;
         right: 70px;
         z-index: 9;
+        cursor: pointer;
     }
     .history_log{
         display: flex;
@@ -213,12 +216,14 @@ export default {
     components : {
       TimeList
     },
+    props:{
+      data_name:String,//用于存储表格的列名，比如压力(kpa)，展示在历史曲线页面标题
+      station_name:String,
+    },
     data() {
         return {
             show_list1:false,
             show_list2:false,
-            data_name:'111',//用于存储表格的列名，比如压力(kpa)，展示在历史曲线页面标题
-            station_name:'杨树浦',
             value_time1: '',
             value_time2: '',
             before_year: '',//用于记录前时间
