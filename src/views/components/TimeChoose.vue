@@ -133,8 +133,8 @@
     .choose_options2{
       content:"";
       position: absolute;
-      top: 46px;
-      left: 239px;
+      top: 57px;
+      left: 244px;
     }
 
     
